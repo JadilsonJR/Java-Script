@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 31 Escopo de Variaveis </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	
+	</style>
+	
+</head>
+<body>
+
+	<script type="text/javascript">	
+
+		var nomeCor="Vermelho";
+		var i=0;
+		function cor(){
+			//Aqui Ta criando uma nova variavel nomeCor se nao tivesse o var teria utilizado a variavel global
+			var nomeCor="Azul";
+			document.write(this.nomeCor+"<br>"+nomeCor);
+		}
+
+		cor(); 
+		document.write(nomeCor+"<br>");
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 28 Date() Hora e Data </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	
+	
+	</style>
+	
+</head>
+<body>
+
+	<script type="text/javascript">	
+//PAGINA 50 Apostila
+		//get= pega
+		//set= Configura
+		
+		//Cria um objeto e atribui o Date
+		var dt = new Date();//Ano,Mes,Dia,Hora,Min,Seg,Mil
+
+
+		//Almento de 2 Anos com o metodo Set ciar um novo date e configurar um ja criado 
+		var ndt= new Date();
+		ndt.setFullYear(dt.getFullYear());
+
+		// Cria um objeto dia da semana atribui o objeto dt ja criado e adciona o metodo .getDay() isso vai retorna um valor da posiçao do vetor 
+		var diasem=ndt.getDay();
+		var dia=ndt.getDate();
+		var mes=ndt.getMonth(); 
+		var ano=ndt.getFullYear();
+
+		//Criaçao de Horas Minutos e Segundos
+		var horas=ndt.getHours();
+		var minutos=ndt.getMinutes();
+		var segundos=ndt.getSeconds();
+
+
+		// Criaçao de Um vetor com os valores dos meses quando apontado o valor do vetor ira cair o mes
+		var meses = new Array("Janeiro", "Fevereiro", "Março", "Abril","Maio","Junho","Julho","Agosto","Setembro", "Outubro","Novembro","Dezembro");
+		var semanas = new Array("Domingo","Segunda-Feira","Terça-Feira","Quarta-Feira","Quinta-Feira","Sexta-Feira","Sabado");
+
+
+		//Esta apontando o valor que esta armazenado no vetor Semanas e Meses
+		document.write(semanas[diasem]+", "+ dia +" de " + meses[mes]+" de "+ano+ "<br>");
+		document.write(horas +":"+minutos+":"+segundos);
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 38 Relogio Funcional </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		@font-face{
+			font-family: formula1;
+			src:url(Formula1.ttf);
+		}
+		#relog{
+			text-align: center;
+			color: #FFF;
+			width: 150px;
+			height: 60px;
+			font-family: formula1;
+			font-size: 20px;
+			border:1px solid #000;
+			border-radius: 20px;
+			background: linear-gradient(to top,rgba(0, 255, 255,0.9),rgba(0,0,0,0.9));	
+			box-shadow: 5px 5px 5px #000;
+		}
+	</style>
+
+
+	<script type="text/javascript">	
+		function relogio(){
+			var data=new Date();
+			var hora=data.getHours();
+			var minutos=data.getMinutes();
+			var segundos=data.getSeconds();
+			if(hora<10){
+				hora="0"+hora;
+			}
+			if(minutos<10){
+				minutos="0"+minutos;
+			}
+			if(segundos<10){
+				segundos="0"+segundos;
+			}
+
+			var horas=hora+":"+minutos+":"+segundos;
+			document.getElementById("relog").value=horas;
+		}
+
+		var tempo=setInterval(relogio,1000);
+
+	</script>
+		
+</head>
+<body>
+	
+	<input type="text" id="relog">
+</body>
+</html>

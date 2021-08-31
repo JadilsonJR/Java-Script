@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 34 Exercicios Eventos Teclado </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#dv1{
+			width: 100px;
+			height: 100px;
+			border:1px solid #000;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			
+		}
+	</style>
+
+
+	<script type="text/javascript">	
+		var px=0;
+		var py=0;
+
+		function move(){
+			var obj=document.getElementById("dv1");
+			var tecla=event.keyCode;
+			
+			//37 = Esquerda ; 38 = Cima ; 39 = Direita ; 40= Baixo
+
+			//No Java Script A direita do X é positivo + ; e a Esquerda é negativa -;
+			//Já o Eixo Y em cima é negativo -; e em baixo é positivo +;  
+			if(tecla==37){
+				px-=10;
+				obj.style.left=px+"px";
+			}else if(tecla==38){
+				py-=10;
+				obj.style.top=py+"px";
+			}else if(tecla==39){
+				px+=10;
+				obj.style.left=px+"px";
+			}else if(tecla==40){
+				py+=10;
+				obj.style.top=py+"px";
+			}else if(tecla==13){
+				alert("Movimento Removido");
+				document.removeEventListener("keydown",move);
+				obj.style.backgroundColor="#FFF";
+			}
+		}
+
+		function msg(){
+			alert("Movimento Ativado");
+		}
+
+		function cor(obj,cor){
+			obj.style.backgroundColor=cor;
+		}
+
+		function ativar(){
+			var obj=document.getElementById("dv1");
+			obj.addEventListener("click",msg);
+			obj.addEventListener("click",function(event){
+				document.addEventListener("keydown",move);});
+			obj.addEventListener("click",function(event){
+			cor(obj,"#F00");});
+		
+			
+		}
+
+		window.addEventListener("load",ativar);
+			
+	</script>
+</head>
+<body>
+	<div id="dv1">
+		
+	</div>
+
+	
+</body>
+</html>

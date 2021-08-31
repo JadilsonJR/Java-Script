@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 47 String Parte 2  </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	</style>
+	
+		
+</head>
+<body>	
+	<p id="txt"> CFB Cursos - Curso de JavaScript  </p>
+	
+	<script type="text/javascript">	
+		var texto=document.getElementById("txt").innerHTML;
+		var txt2="- aula 46 do curso de javascript";
+		var txt3=" - teste de junçao de tres texto";
+		var res=texto.concat(txt2+txt3);
+		//search() mostra onde começa a palavra procurada em numero
+		//replace() substitui uma palavra por outra ex: replace(/curso/ig,"aula");
+		//charAt() indica a posiçao e retorna a letra ex:charAt(12);
+		//charCodeAt() retorna o codigo do caractere ex:charCodeAt(1);
+		//fromCharCode() voce informa o codigo e ele retorna o caractere e aocontrario do charCodeAt() ex:String.fromCharCode(67)
+		//concat() concatena as strings junta duas strings pode passar a variavel ou a escrita ex:texto.concat(txt2);
+		document.write(res);
+	</script>
+	
+</body>
+</html>

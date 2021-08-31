@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 9 IF multiplos retornos </title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var nota=5; 	
+		var res;
+		//Aprovado com Louvor
+		//Aprovado    >=60  
+		//Recuperaçao >=40 && <60
+		//Reprovado   <40
+		//Reprovado com louvor
+ 		if(nota>=95){
+ 			res="Aprovado com Louvor";
+ 		}
+ 		else if(nota>=60){
+ 			res="Aprovado";
+ 		}
+ 		else if(nota >=40){
+ 			res="Recuperaçao";
+ 		}
+ 		else if(nota >=20){
+ 			res="Reprovado"
+ 		}
+ 		else{
+ 			res="Reprovado com Louvor";
+ 		}
+
+ 		document.write(res);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

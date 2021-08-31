@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 42 Silde  </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#dvslider{
+			width: 1000px;
+			height: 300px;
+			border: 1px solid #000;
+			border-radius: 20px;
+		}
+	
+	</style>
+	<script type="text/javascript">	
+
+		var imgs=[];
+		var slider;
+		var imgAtual;
+		var maxImg;
+		var tmp;
+
+		function preCarregamento() {
+			var contimg=1;
+			for(var i=0;i<4;i++){
+			imgs[i]=new Image();
+			imgs[i].src="imgs/img"+contimg+".jpg";
+			contimg++;
+			}
+		}
+
+		//aDICIONA A IMAGEM NA DIV
+		function carregarimg(img){
+			slider.style.backgroundImage="url('"+imgs[img].src+"')";
+		}
+
+		//CHAMA AS FUNCOES E INICIA 
+		function iniciar(){
+			preCarregamento();
+			imgAtual=0;
+			maxImg=imgs.length-1;
+			slider=document.getElementById("dvslider");
+			carregarimg(imgAtual);
+			tmp=setInterval(trocaimg,3000);
+		}
+
+		//FAZ A TROCAS DE IMAGENS
+		function trocaimg(){
+			imgAtual++;
+			if(imgAtual>maxImg){
+				imgAtual=0;
+			}
+			carregarimg(imgAtual);
+
+		}
+		window.addEventListener("load",iniciar);
+	</script>
+		
+</head>
+<body>	
+	<div id="dvslider">
+		
+	</div>
+
+</body>
+</html>

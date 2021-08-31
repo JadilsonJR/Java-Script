@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 40 Soluçao da Aula 39 </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#jogador{
+			height: 50px;
+			width: 50px;
+			position: absolute;
+			border:1px solid #000;
+			background-color: #00F;
+			top: 0px;
+			left: 0px;
+
+		}	
+	</style>
+	<script type="text/javascript">	
+		//Declaraçao de Variaveis
+		var jog;
+		var vel;
+		var dx;
+		var dy;
+		var px;
+		var py;
+		var anima;
+		var estado;
+
+		function game(){
+			px+=(dx*vel);
+			//py+=(dx*vel);
+			jog.style.left=px+"px";
+			//jog.style.top=py+"px";
+
+			if(px>800){
+				dx=-1;
+			}else if(px<= 0){
+				dx=1;
+			}
+			anima=requestAnimationFrame(game);
+
+		}
+
+
+
+		function inicia(){
+			vel=2;
+			dx=1;
+			dy=0;
+			px=0;
+			py=0;
+			estado=1;//1=Movendo, 2=Parado
+			jog=document.getElementById("jogador");
+			jog.addEventListener("click",moverParar);
+			document.getElementById("btini").addEventListener("click",moverBotao);
+			document.getElementById("btParar").addEventListener("click",pararBotao);
+			game();
+		}
+
+
+		function moverParar(){
+			if(estado){
+				estado=0;
+				jog.style.backgroundColor="#F00";
+				cancelAnimationFrame(anima);
+			}else{
+				estado=1;
+				jog.style.backgroundColor="#00F";
+				anima=requestAnimationFrame(game);
+			}
+		}
+
+		function moverBotao(){
+			if(estado==0){
+				estado=1;
+				jog.style.backgroundColor="#00F";
+				anima=requestAnimationFrame(game);
+			}
+		}
+
+		function pararBotao(){
+				estado=0;
+				jog.style.backgroundColor="#F00";
+				cancelAnimationFrame(anima);
+		
+		}
+		window.addEventListener("load",inicia);
+
+	</script>
+		
+</head>
+<body>
+	<div id="jogador">
+		
+	</div>
+	
+	<button id="btini">Iniciar</button>
+	<button id="btParar">Parar</button>
+</body>
+</html>

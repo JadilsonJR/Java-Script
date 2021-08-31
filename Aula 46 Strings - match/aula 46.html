@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 46 String match  </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	</style>
+	
+		
+</head>
+<body>	
+	<p id="txt"> CFB Cursos - Curso de JavaScript - aula 46 do curso de javascript</p>
+	
+	<script type="text/javascript">	
+		var texto=document.getElementById("txt").innerHTML;
+		var res=texto.match(/[a-g]/ig);
+		//Varias espressoes juntas [asd] 
+		//Modificador de indicaçao ^ = eceçao retira os indicados da pesquisa
+		//modificador - entre entre duas opçoes [a-g];
+		document.write(res+ ":"+res.length+"<br>");
+		document.write(res[1]);
+	</script>
+	
+</body>
+</html>

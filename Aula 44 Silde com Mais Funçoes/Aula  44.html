@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 44 Silde com Mais Funçoes  </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#dvslider{
+			width: 1000px;
+			height: 300px;
+			margin: auto;
+			border: none;
+			border-radius: 20px;
+			display: flex;
+			box-shadow: 1px 1px 5px #000;
+			justify-content: space-between;
+			align-items: center;
+			
+		}
+		.btSlider{
+			background-color: rgba(0,0,0,0.4);
+			height:40px;
+			width: 40px;
+			color: #FFF;
+			cursor: pointer;
+			outline: none;
+			margin: 10px;
+			border: none;
+			border-radius: 100%;
+		}
+		#dvload{
+			width: 100%;
+			height: 5px;
+			margin-top: 29%;
+			border: 1px solid rgba(255,255,255,0.3);
+			border-radius: 60px;
+		}
+		#dvbarra{
+			width: 0%;
+			height: 100%;
+			background-color: #FFF;
+		}
+	
+	</style>
+	<script type="text/javascript">	
+
+		var imgs=[];
+		var slider;
+		var imgAtual;
+		var maxImg;
+		var tmp;
+		var tempoTroca;
+		var vtempo;
+		var vbarra;
+
+		function preCarregamento() {
+			var contimg=1;
+			for(var i=0;i<4;i++){
+			imgs[i]=new Image();
+			imgs[i].src="imgs/img"+contimg+".jpg";
+			contimg++;
+			}
+		}
+
+		//aDICIONA A IMAGEM NA DIV
+		function carregarimg(img){
+			slider.style.backgroundImage="url('"+imgs[img].src+"')";
+		}
+
+		//CHAMA AS FUNCOES E INICIA 
+		function iniciar(){
+			preCarregamento();
+			imgAtual=0;
+			maxImg=imgs.length-1;
+			slider=document.getElementById("dvslider");
+			vbarra=document.getElementById("dvbarra");
+			carregarimg(imgAtual);
+			tempoTroca=0;
+			anima();
+		
+		}
+
+		//FAZ A TROCAS DE IMAGENS
+		function trocaimg(dir){
+			tempoTroca=0;//Zera o tempo de troca
+			imgAtual+=dir;//recebe o valor da Direçao
+			if(imgAtual>maxImg){ //Verifica se A posiçao do vetor se for maior que a ultima ele volta para a primeira  
+				imgAtual=0;
+			}else if(imgAtual<0){//Verifica se for menor do que a primeira ele recebe o valor do ultimo slide
+				imgAtual=maxImg;
+			}
+			carregarimg(imgAtual);
+
+		}
+		//CONTROLA O TEMPO DA TROCA
+		function anima(){
+			tempoTroca++;
+			if(tempoTroca>=500){
+				tempoTroca=0;
+				trocaimg(1);
+			}
+			vtempo=tempoTroca/5;
+			vbarra.style.width=vtempo+"%";
+			window.requestAnimationFrame(anima);
+		}
+
+
+		window.addEventListener("load",iniciar);
+	</script>
+		
+</head>
+<body>	
+	<div id="dvslider">
+		<button class="btSlider" onclick="trocaimg(-1)"> < </button>
+		<div id="dvload">
+			<div id="dvbarra"></div>
+		</div>
+		<button class="btSlider" onclick="trocaimg(1)"> > </button>
+	</div>
+
+</body>
+</html>

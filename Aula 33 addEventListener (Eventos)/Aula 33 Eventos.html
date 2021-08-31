@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 33 Eventos addEventListener </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#dv1{
+			border:1px solid #000;
+			width: 100px;
+			height: 100px;
+			background:#F00;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+	</style>
+
+	<script type="text/javascript">	
+		
+		function msg() {
+			alert("Cfb Curso");
+		}
+
+		function cor(obj,cor){
+			obj.style.backgroundColor=cor;
+		}
+//Inicializa os eventos depois de carregar a pagina e rederizar todas as tags
+		function addEventos(){
+		//NO addEventListener() voce tira o on na frente da objeto 
+		var obj=document.getElementById("dv1");
+		obj.addEventListener("click",msg);
+		obj.addEventListener("mouseover",function(event){
+			cor(obj,"#FFF");});
+		obj.addEventListener("mouseout",function(event){
+			cor(obj,"#f00");
+		});
+
+		}
+	
+		window.addEventListener("load",addEventos);
+	
+		
+
+	
+	</script>	
+</head>
+<body>
+	<div id="dv1">
+		
+	</div>
+
+
+
+</body>
+</html>

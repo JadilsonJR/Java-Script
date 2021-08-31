@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 48 String Parte 3  </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	</style>
+	
+		
+</head>
+<body>	
+	<p id="txt">CFB Cursos - Curso de JavaScript  </p>
+	
+	<script type="text/javascript">	
+		var texto=document.getElementById("txt").innerHTML;
+		//var res=texto.indexOf("C");
+		//indexOf() procura a posiçao do primeiro caractere informado se ele nao encontrar ele coloca um valor negativo
+		//lastindexof() procura a posiçao do ultimo caractere informado se ele nao encontrar ele coloca um valor negativo ex:var res=texto.indexOf("C");
+	/*
+		var txt2="Ola";
+		var res=texto.localeCompare(txt2);
+		//localeCompare() serve para comparar as strings se o resultado for igual a 0 as strings sao iguais se for diferente de 0 as strings sao diferentes ex: res=texto.localeCompare("text2");
+		if(res ==0){
+			document.write("Strings iguais");
+		}else{
+			document.write("Strings diferentes");
+		}
+	*/
+
+	var res=texto.toUpperCase().substr(22,10);
+	//slice() serve para recorta um texto dentro da strings ex:var res=texto.slice(22,32);o Primeiro valor é onde começa e o segundo é onde termina o corte
+	//split serve para recorta as palavras separando pelo os espaços e as palavras viram um vetor ex:var res=texto.split(" "); serve para corta e document.write(res[1]); serve para mostrar
+	//substr serve para recorta igual o slice porem a primeira informaçao e posiçao inicial e tamanho do corte ex:var res=texto.substr(4,6); posiçao inicial e quantas letras tem a palavra que vaiser recortada
+	//toLowerCase() serve para deixar todo o texto minusculo;
+	//toUpperCase() serve para deixar todo o texto maisculo;
+	//var res=texto.toUpperCase().substr(); serve para juntar duas funçoes de manipulaçao 
+	document.write(res);
+
+	</script>
+	
+</body>
+</html>

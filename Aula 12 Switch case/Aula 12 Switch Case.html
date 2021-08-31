@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 12 Switch Case</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//O Switch se usa quando voce sabe o valor que irar receber. No If voce nao tem certeza do que vai receber. 
+
+		var pos,msg,pontos;
+			
+		pontos=630;	
+		if(pontos>= 1000)
+		{
+			pos=1;
+		}else if(pontos>=800)
+		{
+			pos=2;
+		}else if(pontos>=600)
+		{
+			pos=3;
+		}else
+		{
+			pontos=0;
+		}
+		 switch(pos){
+		 	case 1:
+		 		msg="Primeiro Lugar <br> Medalha de Ouro";
+		 		break;
+
+		 	case 2:
+		 		msg="Segundo Lugar <br> Medalha de Prata";
+		 		break;
+		 	case 3:
+		 		msg="Terceiro Lugar <br> Medalha de Bronze";
+		 		break;
+		 	default:
+		 	msg="Nao foi ao Podio <br> Nao Obteve Medalha";
+		 }
+		  switch(pos){
+		 	case 1:
+		 	case 2:
+		 	case 3:
+		 		msg+="<br>Subiu ao Podio ";
+		 		break;
+		 	default:
+		 	msg+="<br> Nao Obteve Colocaçao";
+		 }
+		 document.write(msg);
+
+	</script>
+</head>
+<body>

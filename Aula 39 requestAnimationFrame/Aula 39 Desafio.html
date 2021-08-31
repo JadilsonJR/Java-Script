@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 39 Desafio </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#jogador{
+			height: 50px;
+			width: 50px;
+			position: absolute;
+			border:1px solid #000;
+			background-color: #00F;
+			top: 0px;
+			left:120px;
+			
+
+		}	
+	</style>
+	<script type="text/javascript">	
+		//Declaraçao de Variaveis
+		var jog;
+		var vel;
+		var dx;
+		var dy;
+		var px;
+		var py;
+		var anima;
+
+		function game(){
+			px+=(dx*vel);
+			//py+=(dx*vel);
+			jog.style.left=px+"px";
+			//jog.style.top=py+"px";
+
+			if(px>800){
+				dx=-1;
+			}else if(px<= 200){
+				dx=1;
+			}
+			anima=requestAnimationFrame(game);
+
+		}
+
+		function binicio(){
+			btini=document.getElementById("iniciar");
+			btini.addEventListener("click",game);
+			jog.addEventListener("click",game);
+		}
+
+		function bparar(){
+			bpara=document.getElementById("parar");
+			bpara.addEventListener("click",function(){
+				cancelAnimationFrame(anima);
+			});
+			
+
+		}
+		function inicia(){
+			vel=2;
+			dx=1;
+			dy=0;
+			px=120;
+			py=0;
+			jog=document.getElementById("jogador");
+			binicio();
+			bparar();
+			game();
+			
+		}
+		window.addEventListener("load",inicia);
+	</script>
+		
+</head>
+<body>
+	<div id="jogador">
+	</div>
+	
+	<button id="iniciar">Iniciar</button>
+	<button id="parar">Parar</button>	
+</body>
+</html>

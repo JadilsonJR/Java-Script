@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 24 innerHtml e getElementById</title>
+	<meta charset="utf-8">
+	
+</head>
+<body>
+	<p id="texto"> CFB Cursos  </p>
+	<input type="text" id="cxtexto" value="CBF Cursos">
+
+	<div id="dv"> Texto da Div </div>
+	<script type="text/javascript">
+		document.getElementById("cxtexto").value="Curso de javascript";
+		var cxt=document.getElementById("texto").innerHTML="Aula 24 - innerHTML";
+		//Serve Para pegar um conteudo dentro de tags Html
+		document.getElementById("dv").innerHTML="Novo texto";
+
+		//alert(cxt);
+
+
+		// Se utilizar o valor de atribuiçao estamos mudando o valor da variavel ou tag ex:em parenteses
+		//.innerHTML(=)"Novo texto";
+
+		// Se nao tiver o igual é capturando o valor da propriedade ex: Pegou o valor do Id dv. 
+		//Ex:document.getElementById("dv").innerHTML;
+	</script>
+</body>
+</html>

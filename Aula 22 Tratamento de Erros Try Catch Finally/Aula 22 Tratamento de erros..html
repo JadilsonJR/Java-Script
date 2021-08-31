@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 22 Tratamento de Erros Try Catch Finally</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+
+		var num;
+		try{
+			num=prompt("Digite um Valor:");
+			if(num>10){
+				throw new Error("Valor Inválido <br> O Valor deve ser menor ou Igual a 10");
+			}
+
+			document.write("Valor:"+num);
+		}catch(e){
+			document.write("ERRO: "+e.message);
+		}finally{
+			document.write("<br> Fim do Tratamento")
+		}
+
+	</script>
+</head>
+<body>

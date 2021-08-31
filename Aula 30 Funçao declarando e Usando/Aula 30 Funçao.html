@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 29 Funçao declarando e criando </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	
+	
+	</style>
+	
+</head>
+<body>
+
+	<script type="text/javascript">		/*FUNÇAO IMPRIMENDO O VALOR
+		function escreve(){
+			document.write("Curso de JavaScript -CFB Curso");
+		}
+		escreve();
+		*/
+
+		/*FUNÇAO RECEBENDO PARAMETROS
+		function soma(n1,n2){
+			var res=n1+n2;
+			document.write(res+"<br>");
+		}
+		soma(5,2);
+		soma(10,2);
+		soma(5,10);
+		*/
+
+		/*FUNÇAO RECEBENDO PARAMETROS E IMPREMINDO VALORES
+		function soma(n1,n2){
+			var res=n1+n2;
+			return res;
+		}
+		var res=soma(5,5);
+		document.write(res);
+		*/
+		//FUNÇAO RECEBENDO ARRAY
+		//Cria um Vetor onde rece as medias
+		var numeros=new Array(10,10,10,10,10);
+
+		//Cria uma funçao onde recebera o vetor
+		function media(nums){
+			//Verifica quantos numeros tem no vetor
+			var tam=nums.length;
+			var soma=0;
+
+			//Um for para e somando os valores dos vetores 
+			for(var i=0;i<tam;i++)
+			{
+				soma+=nums[i];
+			}
+			return Math.round(soma/tam);
+		}	
+		mediaf=media(numeros);
+		document.write(mediaf);
+	</script>
+</body>
+</html>

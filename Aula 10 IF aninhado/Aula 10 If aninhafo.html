@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aula 10 IF aninhado</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var nota=100; 	
+		var res;
+		//Aprovado com Louvor
+		//Aprovado    >=60  
+		//Recuperaça >=40 && <60
+		//Reprovado   <40
+		//Reprovado com louvor
+ 		if(nota>=60){
+ 			res="Aprovado";
+ 			if(nota>=95){
+ 				if(nota==100){
+ 					res+=" com Exelencia";
+ 				}else{
+ 					res+=" com Louvor";
+ 				}
+ 				
+ 			}
+
+ 			else{
+ 				res+=" com nota normal";
+ 			}
+ 		}else if(nota >=40){
+ 			res="Recuperaçao";
+ 		}else{ 
+ 			res="Reprovado";
+ 			if(nota >=20){
+ 				res+=" por nota baixo";
+ 			}else{
+ 				res+=" com Louvor";
+ 			}
+		}
+ 		document.write(res);
+
+	</script>
+</head>
+<body>
